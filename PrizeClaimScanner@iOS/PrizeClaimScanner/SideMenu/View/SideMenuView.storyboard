@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y6J-Qs-hkm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu Table View Controller-->
+        <scene sceneID="RNl-e9-Lba">
+            <objects>
+                <tableViewController id="y6J-Qs-hkm" customClass="SideMenuTableViewController" customModule="PrizeClaimScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="76R-2T-PW1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection headerTitle="Menu" id="JdN-bS-Y6U">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="1dB-uM-0j0">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1dB-uM-0j0" id="cXV-62-pcf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Document" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrq-Ax-RJY">
+                                                    <rect key="frame" x="73" y="16" width="266" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-Zx-AoE">
+                                                    <rect key="frame" x="16" y="2" width="49" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="CtL-zw-o1G"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="49" id="M8r-3k-kOo"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Help"/>
+                                                    <connections>
+                                                        <action selector="HelpPressed:" destination="y6J-Qs-hkm" eventType="touchUpInside" id="LU8-YH-CDQ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sr9-Zx-AoE" firstAttribute="centerY" secondItem="cXV-62-pcf" secondAttribute="centerY" id="VLZ-Pe-k4y"/>
+                                                <constraint firstItem="zrq-Ax-RJY" firstAttribute="centerY" secondItem="cXV-62-pcf" secondAttribute="centerY" id="Xqo-zM-JlO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zrq-Ax-RJY" secondAttribute="trailing" constant="20" id="cOU-Ue-dNS"/>
+                                                <constraint firstItem="sr9-Zx-AoE" firstAttribute="leading" secondItem="cXV-62-pcf" secondAttribute="leading" constant="16" id="heT-hh-HYl"/>
+                                                <constraint firstItem="zrq-Ax-RJY" firstAttribute="leading" secondItem="sr9-Zx-AoE" secondAttribute="trailing" constant="8" id="tWl-Z1-bje"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="fQu-U6-3si">
+                                        <rect key="frame" x="0.0" y="81" width="375" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fQu-U6-3si" id="8Rh-Vc-bni">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZo-2g-S7S">
+                                                    <rect key="frame" x="73" y="16" width="266" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc4-PD-zqe">
+                                                    <rect key="frame" x="16" y="2" width="49" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="Q4G-37-Tw4"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="49" id="h6r-Qi-Ljo"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="video"/>
+                                                    <connections>
+                                                        <action selector="VideoPressed:" destination="y6J-Qs-hkm" eventType="touchUpInside" id="uQE-Q2-kr5"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NZo-2g-S7S" firstAttribute="centerY" secondItem="8Rh-Vc-bni" secondAttribute="centerY" id="Nhn-jH-rOw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NZo-2g-S7S" secondAttribute="trailing" constant="20" id="Xte-18-968"/>
+                                                <constraint firstItem="NZo-2g-S7S" firstAttribute="leading" secondItem="yc4-PD-zqe" secondAttribute="trailing" constant="8" id="ei2-4J-h3T"/>
+                                                <constraint firstItem="yc4-PD-zqe" firstAttribute="leading" secondItem="8Rh-Vc-bni" secondAttribute="leading" constant="16" id="jf4-Et-225"/>
+                                                <constraint firstItem="yc4-PD-zqe" firstAttribute="centerY" secondItem="8Rh-Vc-bni" secondAttribute="centerY" id="nyX-eD-Z5g"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="IqS-Pu-GXG">
+                                        <rect key="frame" x="0.0" y="134" width="375" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IqS-Pu-GXG" id="6pc-Ho-b13">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-6G-On3">
+                                                    <rect key="frame" x="73" y="16" width="266" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kN1-9x-IMv">
+                                                    <rect key="frame" x="16" y="2" width="49" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="49" id="Y14-cC-i8f"/>
+                                                        <constraint firstAttribute="height" constant="49" id="q60-uI-rSn"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="aboout-icon"/>
+                                                    <connections>
+                                                        <action selector="AboutPressed:" destination="y6J-Qs-hkm" eventType="touchUpInside" id="Ty0-ly-55D"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kN1-9x-IMv" firstAttribute="leading" secondItem="6pc-Ho-b13" secondAttribute="leading" constant="16" id="BN9-fF-DUA"/>
+                                                <constraint firstItem="lfQ-6G-On3" firstAttribute="leading" secondItem="kN1-9x-IMv" secondAttribute="trailing" constant="8" id="HIx-dl-fF2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lfQ-6G-On3" secondAttribute="trailing" constant="20" id="QUb-pX-n6q"/>
+                                                <constraint firstItem="lfQ-6G-On3" firstAttribute="centerY" secondItem="6pc-Ho-b13" secondAttribute="centerY" id="Tcw-2P-mPD"/>
+                                                <constraint firstItem="kN1-9x-IMv" firstAttribute="centerY" secondItem="6pc-Ho-b13" secondAttribute="centerY" id="g64-KN-GBj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="y6J-Qs-hkm" id="4zl-7r-Fqt"/>
+                            <outlet property="delegate" destination="y6J-Qs-hkm" id="Hhh-BL-zKA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKc-j1-tU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283.19999999999999" y="-620.23988005997012"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Help" width="242" height="317"/>
+        <image name="aboout-icon" width="168" height="162"/>
+        <image name="video" width="242" height="219"/>
+    </resources>
+</document>

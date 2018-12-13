@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PrizeClaimScanner"
+             x:Class="PrizeClaimScanner.MainPage"
+             BackgroundImage="calottery.jpg"
+             Title="Claim Form Scanner">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="blueButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#F21f8cc6"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="orangeButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#E8AD00"/>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Image Source="mainlogo.png" x:Name="Logo" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0, 20, 0, 0" WidthRequest="300"/>
+        <Grid x:Name="mainPageGrid" RowSpacing="5" Margin="50, 0, 50, 20" VerticalOptions="EndAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80*" />
+                <RowDefinition Height="80*" />
+                <RowDefinition Height="80*" />
+                <RowDefinition Height="80*" />
+                <!--<RowDefinition Height="80*" />-->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Text="CLEAR" Style="{StaticResource orangeButton}" Clicked="Clear_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="0" Text="SCAN DRIVER LICENSE" Style="{StaticResource blueButton}"  Clicked="ScanDL_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="SCAN TICKET" Style="{StaticResource blueButton}" Clicked="ScanTicket_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="0" Text="EDIT / PREVIEW" Style="{StaticResource blueButton}" Clicked="ClaimForm_Clicked"/>
+            <!--<Button Grid.Row="4" Grid.Column="0" Text="View PDF" Style="{StaticResource blueButton}" Clicked="PdfPage_Clicked"/>-->
+           
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

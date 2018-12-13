@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PrizeClaimScanner.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>7C99648F68C550FFEDFB45B3570BA848965BF4F4</string>
+				<key>dateExpires</key>
+				<string>10/10/21</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>2P9G44MW9Q.CSL.ClaimScan</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>2P9G44MW9Q</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>2P9G44MW9Q.CSL.ClaimScan</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>PrizeClaimScanner.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>fc73ced5-a1de-4b7e-8ed4-c6951aa22094</string>
+				<key>name</key>
+				<string>iOS Team Inhouse Provisioning Profile: CSL.ClaimScan</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>2P9G44MW9Q</string>
+				<key>name</key>
+				<string>California Lottery</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

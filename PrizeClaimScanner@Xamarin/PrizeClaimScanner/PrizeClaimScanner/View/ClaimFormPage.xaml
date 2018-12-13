@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:PrizeClaimScanner.Converter"
+             x:Class="PrizeClaimScanner.View.ClaimFormPage"
+             Title="Claim Form Fields"
+             BackgroundColor="#fcfcfc">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="#fff3bc" />
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="BackgroundColor" Value="#fff3bc" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="TextColor" Value="#134fc6" />
+                <Setter Property="FontFamily" Value="Arial" />
+            </Style>
+            <Style TargetType="Switch">
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="blueButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#F21f8cc6"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <converters:IntEnumConverter x:Key="IntEnum" />
+            <converters:IntStringConverter x:Key="IntString" />
+            <converters:NumberConverter x:Key="NumberConv" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ScrollView Margin="20,20,20,20" Padding="10" Grid.Row="0" Grid.Column="0">
+                <Grid>
+                    <!--Row 0 -->
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" Text="Player Information" Style="{StaticResource Key=TitleLabel}"/>
+                    <!--Row 1 -->
+                    <Label Grid.Row="1" Grid.Column="0" Text="*LAST NAME"/>
+                    <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Path=Player.LastName}" Grid.ColumnSpan="2"/>
+                    <Label Grid.Row="1" Grid.Column="3" Text="*DATE OF BIRTH"/>
+                    <Entry Grid.Row="1" Grid.Column="4" Text="{Binding Path=Player.Month, Converter={StaticResource IntString}}" Placeholder="Month" Keyboard="Numeric" MaxLength="2" />
+                    <Entry Grid.Row="1" Grid.Column="5" Text="{Binding Path=Player.Day, Converter={StaticResource IntString}}" Placeholder="Day" Keyboard="Numeric" MaxLength="2"/>
+                    <Entry Grid.Row="1" Grid.Column="6" Text="{Binding Path=Player.Year, Converter={StaticResource IntString}}" Grid.ColumnSpan="2" Placeholder="Year" Keyboard="Numeric" MaxLength="4"/>
+                    <!-- Row 2 -->
+                    <Label Grid.Row="2" Grid.Column="0" Text="*FIRST NAME"/>
+                    <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Player.FirstName}" />
+                    <Label Grid.Row="2" Grid.Column="3" Text="SUFFIX" />
+                    <Entry Grid.Row="2" Grid.Column="4" Text="{Binding Path=Player.Suffix}" />
+                    <Label Grid.Row="2" Grid.Column="5" Text="SSN" />
+                    <Entry Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" Text="{Binding Path=Player.SSN, Converter={StaticResource NumberConv}}" IsPassword="true" MaxLength="9"/>
+                    <!-- Row 3 -->
+                    <Label Grid.Row="3" Grid.Column="3" Text="Do not have SSN"/>
+                    <Switch Grid.Row="3" Grid.Column="4" IsToggled="{Binding Path=Player.NoSSN}" />
+                    <Label Grid.Row="3" Grid.Column="5" Text="NOT a U.S. Citizen, and NOT a Resident Alien" Grid.ColumnSpan="2"/>
+                    <Switch Grid.Row="3" Grid.Column="7" IsToggled="{Binding Path=Player.NonCitizen}" />
+                    <!-- Row 4 -->
+                    <Label Grid.Row="4" Grid.Column="0" Text="*ADDRESS1"/>
+                    <Entry Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="7" Text="{Binding Path=Player.Address1}" />
+                    <!-- Row 5 -->
+                    <Label Grid.Row="5" Grid.Column="0" Text="*ADDRESS2"/>
+                    <Entry Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="7" Text="{Binding Path=Player.Address2}" />
+                    <!-- Row 6 -->
+                    <Label Grid.Row="6" Grid.Column="0" Text="*CITY"/>
+                    <Entry Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Player.City}" />
+                    <Label Grid.Row="6" Grid.Column="3" Text="*STATE"/>
+                    <Entry Grid.Row="6" Grid.Column="4" Text="{Binding Path=Player.State}" />
+                    <Label Grid.Row="6" Grid.Column="5" Text="*ZIP CODE"/>
+                    <Entry Grid.Row="6" Grid.Column="6" Text="{Binding Path=Player.Zipcode1}" MaxLength="5" />
+                    <Entry Grid.Row="6" Grid.Column="7" Text="{Binding Path=Player.Zipcode2}" MaxLength="5" />
+                    <!-- Row 7 -->
+                    <Label Grid.Row="7" Grid.Column="0" Text="*COUNTRY"/>
+                    <Entry Grid.Row="7" Grid.Column="1" Text="{Binding Path=Player.Country}" />
+                    <Label Grid.Row="7" Grid.Column="2" Text="E-MAIL"/>
+                    <Entry Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2" Text="{Binding Path=Player.Email}" />
+                    <Label Grid.Row="7" Grid.Column="5" Text="*Phone"/>
+                    <Entry Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="2" Text="{Binding Path=Player.Phone}" />
+                    <!-- Row 8 -->
+                    <Label  Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Text="*Are you a Lottery Retailer?"/>
+                    <Switch Grid.Row="8" Grid.Column="2" IsToggled="{Binding IsLotteryRetailer}" />
+                    <Label  Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="2" Text="*Are you employed by a Lottery Retailer?"/>
+                    <Switch Grid.Row="8" Grid.Column="5" IsToggled="{Binding IsLotteryRetailerEmployee}" />
+                    <Label  Grid.Row="8" Grid.Column="6" Text="*Are you related to a Lottery Retailer?"/>
+                    <Switch Grid.Row="8" Grid.Column="7" IsToggled="{Binding IsLotteryRetailerRelated}" />
+                    <!--Row 9 -->
+                    <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" Text="Questionnaire" Style="{StaticResource Key=TitleLabel}"/>
+                    <!-- Row 10 -->
+                    <Label Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Text="Which of the following do you consider yourself to be?
+(Check all that apply)" />
+                    <Label  Grid.Row="10" Grid.Column="4"  Text="African American"/>
+                    <Switch Grid.Row="10" Grid.Column="5" IsToggled="{Binding Path=Race.IsAfricanAmerican}" />
+                    <Label  Grid.Row="10" Grid.Column="6"  Text="Asian"/>
+                    <Switch Grid.Row="10" Grid.Column="7" IsToggled="{Binding Path=Race.IsAsian}" />
+                    <!-- Row 11 -->
+                    <Label  Grid.Row="11" Grid.Column="4"  Text="Hispanic"/>
+                    <Switch Grid.Row="11" Grid.Column="5" IsToggled="{Binding Path=Race.IsHispanic}" />
+                    <Label  Grid.Row="11" Grid.Column="6"  Text="White"/>
+                    <Switch Grid.Row="11" Grid.Column="7" IsToggled="{Binding Path=Race.IsWhite}" />
+                    <!-- Row 12 -->
+                    <Label  Grid.Row="12" Grid.Column="4"  Text="Other"/>
+                    <Switch Grid.Row="12" Grid.Column="5" IsToggled="{Binding Path=Race.IsOther}" x:Name="IsOther"/>
+                    <Label  Grid.Row="12" Grid.Column="6"  Text="Specify" IsVisible="{Binding Path=Race.IsOther}" x:Name="IsOtherLabel"/>
+                    <Entry  Grid.Row="12" Grid.Column="7"  Text="{Binding Path=Race.OtherText}" IsVisible="{Binding Path=Race.IsOther}" x:Name="OtherEntry"/>
+                    <!-- Row 13 -->
+                    <Label  Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" Text="Annual Household Income"/>
+                    <Picker Grid.Row="13" Grid.Column="2" Grid.ColumnSpan="2" ItemsSource="{Binding HouseholdOptions}" SelectedIndex="{Binding HouseholdIncome, Converter={StaticResource IntEnum}}"/>
+                    <Label  Grid.Row="13" Grid.Column="4" Grid.ColumnSpan="2" Text="Number of People in Household"/>
+                    <Entry  Grid.Row="13" Grid.Column="6"  Text="{Binding NoPeopleInHousehold, Converter={StaticResource IntString}}" />
+                    <!-- Row 14 -->
+                    <Label  Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2" Text="Education"/>
+                    <Picker Grid.Row="14" Grid.Column="2"  Grid.ColumnSpan="2" ItemsSource="{Binding EducationOptions}" SelectedIndex="{Binding Education, Converter={StaticResource IntEnum}}"/>
+                    <!-- Row 15 -->
+                    <Label  Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" Text="Gender"/>
+                    <Picker Grid.Row="15" Grid.Column="2"  Grid.ColumnSpan="2" ItemsSource="{Binding GenderOptions}" SelectedIndex="{Binding Path=Player.Gender, Converter={StaticResource IntEnum}}"/>
+                    <!-- Row 16 -->
+                    <Label  Grid.Row="16" Grid.Column="0"  Text="Occupation (Check all that apply)"/>
+                    <Label  Grid.Row="16" Grid.Column="1"  Text="Student"/>
+                    <Switch Grid.Row="16" Grid.Column="2" IsToggled="{Binding Path=Occupation.IsStudent}" />
+                    <Label  Grid.Row="16" Grid.Column="3"  Text="Employed"/>
+                    <Switch Grid.Row="16" Grid.Column="4" IsToggled="{Binding Path=Occupation.IsEmployed}" />
+                    <!-- Row 17 -->
+                    <Label  Grid.Row="17" Grid.Column="1"  Text="Unemployed"/>
+                    <Switch Grid.Row="17" Grid.Column="2" IsToggled="{Binding Path=Occupation.IsUnemployed}" />
+                    <Label  Grid.Row="17" Grid.Column="3"  Text="Retired"/>
+                    <Switch Grid.Row="17" Grid.Column="4" IsToggled="{Binding Path=Occupation.IsRetired}" />
+                    <!--Row 18 -->
+                    <Label Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="8" Text="Ticket Information" Style="{StaticResource Key=TitleLabel}"/>
+                    <!-- Row 19 -->
+                    <Label Grid.Row="19" Grid.Column="0" Text="Ticket Number"/>
+                    <Entry Grid.Row="19" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Ticket.TicketNumber}" />
+                    <Label Grid.Row="19" Grid.Column="3" Text="Scratchers?"/>
+                    <Switch Grid.Row="19" Grid.Column="4" IsToggled="{Binding Path=Ticket.IsScratcher}"/>
+                    <Label Grid.Row="19" Grid.Column="5" Text="Prize Claimed $" />
+                    <Entry Grid.Row="19" Grid.Column="6" Text="{Binding Path=Ticket.PrizeClaimed}" />
+                    <!-- Row 20 -->
+                    <Label Grid.Row="20" Grid.Column="3" Text="Check Digit" IsVisible="{Binding Path=Ticket.IsScratcher}"/>
+                    <Entry Grid.Row="20" Grid.Column="4" Text="{Binding Path=Ticket.CheckDigit}" IsVisible="{Binding Path=Ticket.IsScratcher}" />
+                </Grid>
+            </ScrollView>
+            <Button Text="View PDF"  Grid.Row="1" Style="{StaticResource blueButton}" Clicked="PdfPage_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

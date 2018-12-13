@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KCE-Io-RAB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View-->
+        <scene sceneID="Dfa-rL-thU">
+            <objects>
+                <viewController title="Camera View" id="KCE-Io-RAB" customClass="CameraBaseViewController" customModule="PrizeClaimScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="070-zt-8lr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGs-Fg-sby">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Flash Light" id="wo2-Sa-BxN">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="torch-off" id="ObM-lD-BGG">
+                                            <color key="tintColor" red="0.0" green="0.54901960780000003" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="torchTogglePress:" destination="KCE-Io-RAB" id="ndG-bt-qCu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82217639593908631" green="0.82217639593908631" blue="0.82217639593908631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="GGs-Fg-sby" firstAttribute="top" secondItem="DR9-cV-Pa9" secondAttribute="top" id="0pf-Cc-tjT"/>
+                            <constraint firstItem="GGs-Fg-sby" firstAttribute="leading" secondItem="DR9-cV-Pa9" secondAttribute="leading" id="Cmy-ks-FeL"/>
+                            <constraint firstItem="DR9-cV-Pa9" firstAttribute="trailing" secondItem="GGs-Fg-sby" secondAttribute="trailing" id="eyg-R3-cRK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DR9-cV-Pa9"/>
+                    </view>
+                    <connections>
+                        <outlet property="flashButton" destination="ObM-lD-BGG" id="ut7-gU-zAg"/>
+                        <outlet property="toolbar" destination="GGs-Fg-sby" id="Cw9-fV-2wA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PA4-Wx-8RT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="-44"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="torch-off" width="50" height="50"/>
+    </resources>
+</document>

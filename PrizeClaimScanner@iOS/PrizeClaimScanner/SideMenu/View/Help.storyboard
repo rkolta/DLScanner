@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h17-U4-PB1">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Help-->
+        <scene sceneID="Ig6-BP-ODJ">
+            <objects>
+                <viewController title="Help" id="h17-U4-PB1" customClass="HelpViewController" customModule="PrizeClaimScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W8F-ov-8MY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFS-fq-tB1" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CFS-fq-tB1" firstAttribute="leading" secondItem="dOi-mG-7NZ" secondAttribute="leading" id="4i1-xQ-qq2"/>
+                            <constraint firstItem="CFS-fq-tB1" firstAttribute="bottom" secondItem="dOi-mG-7NZ" secondAttribute="bottom" id="LaO-hu-MHo"/>
+                            <constraint firstItem="CFS-fq-tB1" firstAttribute="trailing" secondItem="dOi-mG-7NZ" secondAttribute="trailing" id="NDH-Cd-cSd"/>
+                            <constraint firstItem="CFS-fq-tB1" firstAttribute="top" secondItem="dOi-mG-7NZ" secondAttribute="top" id="khg-jP-W5b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dOi-mG-7NZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="pdfView" destination="CFS-fq-tB1" id="hoe-br-DMz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqG-qf-Xgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.5999999999999" y="-282.00899550224892"/>
+        </scene>
+    </scenes>
+</document>

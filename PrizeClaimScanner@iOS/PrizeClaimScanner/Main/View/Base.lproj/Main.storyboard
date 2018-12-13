@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Imj-c3-hUW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Container View Controller-->
+        <scene sceneID="irR-ob-SSJ">
+            <objects>
+                <viewController id="Imj-c3-hUW" customClass="ContainerViewController" customModule="PrizeClaimScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nNy-nE-73I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAK-fI-DBq" userLabel="Main Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="OKI-cG-TZP" kind="embed" id="sIl-xt-02P"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsI-l1-8JX" userLabel="Side Container View">
+                                <rect key="frame" x="-300" y="0.0" width="300" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="03s-WH-Fjl"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="hvG-ap-5bG" kind="embed" id="Jnf-c8-9pY"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fsI-l1-8JX" firstAttribute="bottom" secondItem="nNy-nE-73I" secondAttribute="bottom" id="5PV-O4-b6j"/>
+                            <constraint firstItem="fsI-l1-8JX" firstAttribute="leading" secondItem="nNy-nE-73I" secondAttribute="leading" constant="-300" id="Ibg-tY-IQl"/>
+                            <constraint firstItem="FAK-fI-DBq" firstAttribute="leading" secondItem="nNy-nE-73I" secondAttribute="leading" id="SHh-gG-pET"/>
+                            <constraint firstItem="fsI-l1-8JX" firstAttribute="top" secondItem="nNy-nE-73I" secondAttribute="top" id="SuG-uh-eqG"/>
+                            <constraint firstItem="FAK-fI-DBq" firstAttribute="bottom" secondItem="JxT-hq-7En" secondAttribute="bottom" id="bhs-O8-Nbd"/>
+                            <constraint firstItem="FAK-fI-DBq" firstAttribute="top" secondItem="nNy-nE-73I" secondAttribute="top" id="e2e-8p-KmS"/>
+                            <constraint firstAttribute="trailing" secondItem="FAK-fI-DBq" secondAttribute="trailing" id="fit-gb-idl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JxT-hq-7En"/>
+                    </view>
+                    <connections>
+                        <outlet property="sideMenuConstraint" destination="Ibg-tY-IQl" id="reQ-fW-hwm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0l-ji-9W4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="107.49625187406298"/>
+        </scene>
+        <!--Main View-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" title="Main View" id="BYZ-38-t0r" customClass="ViewController" customModule="PrizeClaimScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="Mre-ZG-vjV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="S0c-CU-juf">
+                                <rect key="frame" x="15" y="79" width="345" height="573"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="0TA-he-2YE">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="286.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cej-C6-n7b">
+                                        <rect key="frame" x="0.0" y="286.5" width="345" height="286.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claim Form Scanner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeq-cs-enK" userLabel="Title">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="53.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" red="0.0" green="0.46954463992644485" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.66666666669999997" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="2" height="2"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVe-gd-mGU">
+                                                <rect key="frame" x="0.0" y="58.5" width="345" height="53"/>
+                                                <color key="backgroundColor" red="1" green="0.6315685379" blue="0.34068789729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="CLEAR"/>
+                                                <connections>
+                                                    <action selector="clearBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z5U-71-0eD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7z-92-fcU" userLabel="Scan DL">
+                                                <rect key="frame" x="0.0" y="116.5" width="345" height="53.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.5490196078431373" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title=" SCAN DRIVER LICENSE">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="scanDLPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JA4-Yh-Nhb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Z2-Qg-hsd" userLabel="Scan Ticket">
+                                                <rect key="frame" x="0.0" y="175" width="345" height="53"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54901960780000003" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title=" SCAN TICKET">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="scanTicketPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FcV-Jw-VOQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="left" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEl-YD-rWc" userLabel="Fill Required Fields">
+                                                <rect key="frame" x="0.0" y="233" width="345" height="53.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54901960780000003" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title=" EDIT / PREVIEW">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fillRequiredFieldsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dG-bu-yZi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S0c-CU-juf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="0Fj-g6-YBt"/>
+                            <constraint firstAttribute="bottom" secondItem="Mre-ZG-vjV" secondAttribute="bottom" id="C1g-RL-8mO"/>
+                            <constraint firstItem="S0c-CU-juf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Ldf-kZ-1z4"/>
+                            <constraint firstItem="Mre-ZG-vjV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gvD-1u-I8w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S0c-CU-juf" secondAttribute="trailing" constant="15" id="hsa-6v-QXn"/>
+                            <constraint firstItem="Mre-ZG-vjV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jlU-Lb-bS7"/>
+                            <constraint firstAttribute="trailing" secondItem="Mre-ZG-vjV" secondAttribute="trailing" id="t8R-m7-Ksw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S0c-CU-juf" secondAttribute="bottom" constant="15" id="vWJ-Lp-CRD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Claim Form Scanner" id="WFo-7O-5h6">
+                        <barButtonItem key="backBarButtonItem" title="Main Menu" id="Q77-Qu-mKU"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" image="burger-icon" id="dKp-5o-cRz">
+                            <connections>
+                                <action selector="sideMenuPressed:" destination="BYZ-38-t0r" id="nE6-tc-lOz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="claimField" destination="VEl-YD-rWc" id="zAL-Xy-6Yq"/>
+                        <outlet property="clearBtn" destination="WVe-gd-mGU" id="4EQ-Bz-fmh"/>
+                        <outlet property="scanDL" destination="v7z-92-fcU" id="9dy-cx-HGx"/>
+                        <outlet property="scanTicket" destination="9Z2-Qg-hsd" id="8ph-Em-NX7"/>
+                        <segue destination="xPV-Rb-dEj" kind="show" identifier="pdfSegue" id="vFH-Xh-emw"/>
+                        <segue destination="Rbq-qU-XFM" kind="show" identifier="cameraSegue" id="SAR-ZY-ghA"/>
+                        <segue destination="PmT-gO-ip6" kind="show" identifier="helpSegue" id="Ymv-hY-Hcg"/>
+                        <segue destination="Vlf-c4-fAJ" kind="presentation" identifier="aboutSegue" id="pBi-dk-6D0"/>
+                        <segue destination="xZ2-go-AgV" kind="show" identifier="FormFieldsSegue" id="gt6-3D-rty"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128.8" y="152.47376311844079"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZwZ-aZ-prd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OKI-cG-TZP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gDM-vP-Qis">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <viewLayoutGuide key="safeArea" id="dXf-s8-2oM"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.5490196078431373" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="A8e-xQ-jEV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFt-jK-qhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="871"/>
+        </scene>
+        <!--ScanView-->
+        <scene sceneID="4Ok-Nq-q0w">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ScanView" id="Rbq-qU-XFM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0s-8d-ygU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="621"/>
+        </scene>
+        <!--ClaimFormPDFView-->
+        <scene sceneID="Ybs-bs-Mec">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ClaimFormPDFView" id="xPV-Rb-dEj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNr-rj-GbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1129" y="621"/>
+        </scene>
+        <!--SideMenuView-->
+        <scene sceneID="c7J-0k-mJb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SideMenuView" id="hvG-ap-5bG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVM-KK-BXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-145" y="583"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="itI-xb-zxK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="About" id="Vlf-c4-fAJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Rl-37-2nO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671" y="309"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="cIc-y1-xsr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Help" id="PmT-gO-ip6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P52-mb-rsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677" y="236"/>
+        </scene>
+        <!--ClaimFormFields-->
+        <scene sceneID="nHk-u3-1ZM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ClaimFormFields" id="xZ2-go-AgV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xv1-Rl-2XC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877.5999999999999" y="48.125937031484263"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BG" width="1242" height="2208"/>
+        <image name="burger-icon" width="35" height="35"/>
+        <image name="logo" width="400" height="400"/>
+    </resources>
+</document>

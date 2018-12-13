@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PrizeClaimScanner"
+             x:Class="PrizeClaimScanner.View.PdfPage"
+             Title="Claim Form PDF View"
+             BackgroundColor="Gray">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="blueButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#F21f8cc6"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="orangeButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#E8AD00"/>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Button Grid.Row="0" Grid.Column="0" x:Name="PrintBtn" Text="Print" Clicked="PrintBtn_Clicked" Style="{StaticResource blueButton}"/>
+                <Button Grid.Row="0" Grid.Column="1" x:Name="MainMenuBtn" Text="Main Menu" Clicked="MainMenuBtn_Clicked" Style="{StaticResource orangeButton}" />
+            </Grid>
+            <ScrollView Grid.Row="1">
+                <local:CustomImage x:Name="PdfImage"></local:CustomImage>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
